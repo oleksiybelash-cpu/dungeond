@@ -13,7 +13,9 @@ import random
 
 Classes = {
     "Warrior": {"Hp": (100, 140), "Damage": (10, 15)},
-    "Wizard": {"Hp": (75, 90), "Damage": (20, 30)}
+    "Wizard": {"Hp": (75, 90), "Damage": (20, 30)},
+    "Archer": {"Hp": (75, 90), "Damage": (15, 20)},
+    "Tank": {"Hp": (150, 200), "Damage": (5, 10)}
 }
 
 def create_hero(name, hero_class):
@@ -29,6 +31,11 @@ def show_hero(hero):
     print(f"{hero['name']} - {hero['class']}")
     print(f"HP: {hero['Hp']}")
     print(f"Damage: {hero['Damage']}")
-
-    hero = create_hero("John", "Wizard")
-    show_hero(hero)
+John = create_hero("John", "Warrior")
+Jake = create_hero("Jake", "Wizard")
+Anna = create_hero("Anna", "Archer")
+Ben = create_hero("Ben", "Tank")
+show_hero(John)
+show_hero(Jake)
+show_hero(Anna)
+show_hero(Ben)
