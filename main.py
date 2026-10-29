@@ -1,12 +1,17 @@
-from heroes import Hero
-from enemies import Enemy
+from heroes import Warrior, Wizard
+from enemies import Boss
 
-hero = Hero("Nova", "Wizard")
-enemy = Enemy("Goblin", 60, 9)
+CLASSES = {"1": Warrior, "2": Wizard}
+
+choice = input("Choose your hero: 1 - Warrior, 2 - Mag: ")
+name = input("Name of the hero: ")
+hero = CLASSES.get(choice, Wizard)(name)
+
+boss = Boss("King of Goblins", 120, 15)
 
 round_no = 1
 
-while hero.is_alive() and enemy.is_alive():
+while hero.is_alive() and boss.is_alive():
     print(f"\n---- Round {round_no} ----")
 
     damage = hero.hit(enemy)
